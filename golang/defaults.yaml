@@ -3,8 +3,8 @@ default:
   prefix: /usr/local
   go_root: /usr/local/go
   go_path: /var/lib/golang
-  version: "1.6"
-  archive_hash: "5470eac05d273c74ff8bac7bef5bad0b5abbd1c4052efbdbc8db45332e836b0b"
+  version: "1.7"
+  archive_hash: "702ad90f705365227e902b42d91dd1a40e48ca7f67a2f4b2fd052aaa4295cd95"
 Debian: {}
 RedHat: {}
 {% endload %}
