@@ -18,6 +18,11 @@ golang|cache-archive:
         - which go
         # asserts the version of go
         - test -x {{ golang.base_dir }}/go/bin/go
+    - retry:
+        attempts: 5
+        until: True
+        interval: 60
+        splay: 10
 
 # Extract the archive locally to golang:lookup:base_dir: which has our version
 # schema already baked in and extract the archive if necessary
