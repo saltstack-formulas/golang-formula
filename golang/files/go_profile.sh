@@ -4,4 +4,5 @@
 # All edits will be lost on the next highstate
 export GOROOT={{ golang.go_root }}
 export GOPATH={{ golang.go_path }}
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOBASE={{ golang.base_dir }}/go
+export PATH=$PATH:$GOROOT/bin:$GOBASE/bin

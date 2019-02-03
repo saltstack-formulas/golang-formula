@@ -13,6 +13,11 @@ golang|cache-archive:
     - source_hash: https://storage.googleapis.com/golang/{{ golang.archive_name }}.sha256
     - user: root
     - group: root
+    - retry:
+        attempts: 3
+        until: True
+        interval: 60
+        splay: 10
     - unless:
         # asserts go is on our path
         - which go
@@ -81,7 +86,7 @@ golang|create-symlink-{{ i }}:
   alternatives.install:
     - name: link-{{ i }}
     - link: /usr/bin/{{ i }}
-    - path: {{ golang.go_root }}/bin/{{ i }}
+    - path: {{ golang.base_dir }}/go/bin/{{ i }}
     - priority: {{ golang.linux.altpriority }}
     - order: 10
     - watch:
@@ -93,7 +98,7 @@ golang|create-symlink-{{ i }}:
 golang|set-symlink={{ i }}:
   alternatives.set:
     - name: link-{{ i }}
-    - path: {{ golang.go_root }}/bin/{{ i }}
+    - path: {{ golang.base_dir }}/go/bin/{{ i }}
     - require:
       - alternatives: golang|create-symlink-{{ i }}
 
