@@ -63,47 +63,35 @@ golang|extract-archive:
 
 # add a symlink from versioned install to point at golang:lookup:go_root
 golang|install-home-alternative:
-      {%- if grains.os_family in ('Suse',) %}
-  cmd.run:
-    - name: update-alternatives --install {{ golang.go_root }} golang-home-link {{ golang.base_dir }}/go/ {{ golang.linux.altpriority }}
-      {%- else %}
   alternatives.install:
     - name: golang-home-link
     - link: {{ golang.go_root }}
     - path: {{ golang.base_dir }}/go/
     - priority: {{ golang.linux.altpriority }}
     - order: 10
-      {%- endif %}
     - watch:
         - archive: golang|extract-archive
     - retry:
         attempts: 2
         until: True
 
-      {%- if grains.os_family not in ('Suse',) %}
 golang|set-home-alternative:
   alternatives.set:
     - name: golang-home-link
     - path: {{ golang.base_dir }}/go/
     - require:
       - alternatives: golang|install-home-alternative
-     {%- endif %}
 
      {% for i in ['go', 'godoc', 'gofmt'] %}
 
      #manage symlinks to /usr/bin for the three go commands
 golang|create-symlink-{{ i }}:
-      {%- if grains.os_family in ('Suse',) %}
-  cmd.run:
-    - name: update-alternatives --install /usr/bin/{{ i }} link-{{ i }} {{ golang.base_dir }}/go/bin/{{ i }} {{ golang.linux.altpriority }}
-      {%- else %}
   alternatives.install:
     - name: link-{{ i }}
     - link: /usr/bin/{{ i }}
     - path: {{ golang.base_dir }}/go/bin/{{ i }}
     - priority: {{ golang.linux.altpriority }}
     - order: 10
-      {%- endif %}
     - watch:
       - archive: golang|extract-archive
     - require:
@@ -113,14 +101,12 @@ golang|create-symlink-{{ i }}:
         attempts: 2
         until: True
 
-      {%- if grains.os_family not in ('Suse',) %}
 golang|set-symlink={{ i }}:
   alternatives.set:
     - name: link-{{ i }}
     - path: {{ golang.base_dir }}/go/bin/{{ i }}
     - require:
       - alternatives: golang|create-symlink-{{ i }}
-      {%- endif %}
 
      {% endfor %}
   {%- endif %}
