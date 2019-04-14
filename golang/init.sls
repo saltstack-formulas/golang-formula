@@ -76,6 +76,9 @@ golang|install-home-alternative:
       {%- endif %}
     - watch:
         - archive: golang|extract-archive
+    - retry:
+        attempts: 2
+        until: True
 
       {%- if grains.os_family not in ('Suse',) %}
 golang|set-home-alternative:
@@ -106,6 +109,9 @@ golang|create-symlink-{{ i }}:
     - require:
       - alternatives: golang|install-home-alternative
       - alternatives: golang|set-home-alternative
+    - retry:
+        attempts: 2
+        until: True
 
       {%- if grains.os_family not in ('Suse',) %}
 golang|set-symlink={{ i }}:
