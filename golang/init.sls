@@ -93,7 +93,7 @@ golang|create-symlink-{{ i }}:
     - priority: {{ golang.linux.altpriority }}
     - order: 10
     - require:
-      - alternatives: golang|install-home-alternativ
+      - alternatives: golang|install-home-alternative
     - watch:
       - archive: golang|extract-archive
     - retry:
