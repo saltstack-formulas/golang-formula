@@ -92,11 +92,10 @@ golang|create-symlink-{{ i }}:
     - path: {{ golang.base_dir }}/go/bin/{{ i }}
     - priority: {{ golang.linux.altpriority }}
     - order: 10
+    - require:
+      - alternatives: golang|install-home-alternativ
     - watch:
       - archive: golang|extract-archive
-    - require:
-      - alternatives: golang|install-home-alternative
-      - alternatives: golang|set-home-alternative
     - retry:
         attempts: 2
         until: True
@@ -109,7 +108,6 @@ golang|set-symlink={{ i }}:
       - alternatives: golang|create-symlink-{{ i }}
 
      {% endfor %}
-
   {%- endif %}
 
 # sets up the necessary environment variables required for golang usage

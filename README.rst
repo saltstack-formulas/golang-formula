@@ -27,6 +27,11 @@ Install go!
 -----------------
 Helpful for debugging, dumps the jinja map to a text file
 
+``golang.clean``
+------------
+Remove go!
+
+
 
 
 Testing
