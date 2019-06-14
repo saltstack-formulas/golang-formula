@@ -5,6 +5,6 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import golang with context %}
 
-include:
-  - {{ '.archive' if golang.pkg.use_upstream_archive else '.package' }}
-  - .config
+golang-package-repo-clean-pkgrepo-absent:
+  pkgrepo.absent:
+    - name: {{ golang.pkg.repo.name }}

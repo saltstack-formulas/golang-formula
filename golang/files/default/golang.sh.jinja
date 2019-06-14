@@ -1,0 +1,16 @@
+########################################################################
+# File managed by Salt at <{{ source }}>.
+# Your changes may be overwritten.
+########################################################################
+
+export GOROOT={{ golang.go_root }}
+export GOPATH={{ golang.go_path }}
+export GOBASE={{ golang.base_dir }}/go
+export PATH=$PATH:$GOROOT/bin:$GOBASE/bin
+
+
+{%- if golang.environ %}
+    {%- for item in golang.environ %}
+{{ item }}
+    {%- endfor %}
+{%- endif %}

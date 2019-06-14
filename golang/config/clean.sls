@@ -6,5 +6,10 @@
 {%- from tplroot ~ "/map.jinja" import golang with context %}
 
 include:
-  - {{ '.archive' if golang.pkg.use_upstream_archive else '.package' }}
-  - .config
+  - {{ tplroot ~ '.config.alternatives.clean' }}
+
+golang-config-clean-file-absent:
+  file.absent:
+    - names:
+      - {{ golang.config }}
+      - {{ golang.environ_file }}

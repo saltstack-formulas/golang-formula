@@ -1,7 +1,9 @@
-name: golan
-os: RedHat, Debian, Ubuntu, Suse, FreeBSD
-os_family: RedHat, Debian, Suse, FreeBSD
-version: 201605
+name: golang
+os: Debian, Ubuntu, Raspbian, RedHat, Fedora, CentOS, Suse, openSUSE, Gentoo, Funtoo, Arch, Manjaro, Alpine, FreeBSD, OpenBSD, Solaris, SmartOS, Windows, MacOS
+os_family: Debian, RedHat, Suse, Gentoo, Arch, Alpine, FreeBSD, OpenBSD, Solaris, Windows, MacOS
+version: 2.2.1
 release: 1
-summary: Formula for installing Golang
-description: Formula for installing Golang from source
+minimum_version: 2016.11
+summary: golang formula
+description: Formula for golang
+top_level_dir: golang

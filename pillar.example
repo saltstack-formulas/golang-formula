@@ -1,8 +1,57 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 golang:
   lookup:
-    version: 1.8.3
-    go_path: ~/golang
+    master: golang-master
+    # Just for testing purposes
+    winner: lookup
+    added_in_lookup: lookup_value
 
-  #'Alternatives system' priority (0 disables). zero is default.
-  linux:
-    altpriority: {{ range(1, 9100000) | random }}
+  # Using bash package and udev service as an example. This allows us to
+  # test the golang formula itself. You should set these parameters to
+  # examples that make sense in the contexto of the formula you're writing.
+  {%- if grains.osfinger == 'CentOS-6' %}
+  pkg:
+    name: cronie
+  service:
+    name: crond
+  {%- else %}
+  pkg:
+    name: bash
+  service:
+    name: systemd-udevd
+  {%- endif %}
+  config: /etc/golang-formula.conf
+
+  tofs:
+    # The files_switch key serves as a selector for alternative
+    # directories under the formula files directory. See TOFS pattern
+    # doc for more info.
+    # Note: Any value not evaluated by `config.get` will be used literally.
+    # This can be used to set custom paths, as many levels deep as required.
+    files_switch:
+      - any/path/can/be/used/here
+      - id
+      - osfinger
+      - os
+      - os_family
+    # All aspects of path/file resolution are customisable using the options below.
+    # This is unnecessary in most cases; there are sensible defaults.
+    # path_prefix: golang_alt
+    # dirs:
+    #   files: files_alt
+    #   default: default_alt
+    # source_files:
+    #   golang-config-file-file-managed:
+    #     - 'example_alt.tmpl'
+    #     - 'example_alt.tmpl.jinja'
+
+    # For testing purposes
+    source_files:
+      golang-config-file-file-managed:
+        - 'example.tmpl.jinja'
+
+  # Just for testing purposes
+  winner: pillar
+  added_in_pillar: pillar_value
