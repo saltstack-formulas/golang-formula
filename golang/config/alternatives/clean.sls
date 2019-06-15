@@ -17,7 +17,7 @@ golang-package-archive-remove-home-alternative-remove:
   alternatives.remove:
     - name: golang-home
     - path: {{ golang.base_dir }}/go
-    - onlyif: update-alternatives --display golang-home 2>/dev/null
+    - onlyif: update-alternatives --get-selections |grep ^golang-home
     - require:
       - sls: {{ sls_archive_clean }}
 
@@ -27,7 +27,7 @@ golang-package-archive-remove-{{ i }}-alternative-remove:
   alternatives.remove:
     - name: link-{{ i }}
     - path: {{ golang.base_dir }}/go/bin/{{ i }}
-    - onlyif: update-alternatives --display link-{{ i }} 2>/dev/null
+    - onlyif: update-alternatives --get-selections |grep ^link-{{ i }}
     - require:
       - sls: {{ sls_archive_clean }}
 
