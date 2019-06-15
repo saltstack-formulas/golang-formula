@@ -8,9 +8,15 @@ golang:
     winner: lookup
     added_in_lookup: lookup_value
 
-  # Using bash package and udev service as an example. This allows us to
-  # test the golang formula itself. You should set these parameters to
-  # examples that make sense in the contexto of the formula you're writing.
+  # Using package archive as an example to test golang formula itself.
+  # You should set these parameters to values that make sense.
+  pkg:
+    archive:
+      uri: https://storage.googleapis.com/golang
+
+  linux:
+    #'Alternatives system' priority: zero disables (default)
+    altpriority: 1000
 
   tofs:
     # The files_switch key serves as a selector for alternative
