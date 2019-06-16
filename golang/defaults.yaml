@@ -2,9 +2,9 @@
 # vim: ft=yaml
 ---
 golang:
-  go_root: /usr/local/go
-  go_path: /usr/local/golang/packages
+  dir: /usr/local/go      ## go_root
   version: '1.10.1'
+  go_path: /usr/local/golang/packages
   pkg:
     name: go
     use_upstream_repo: False
@@ -15,7 +15,8 @@ golang:
       source: None
       source_hash: None
       trim_output: True   {# works in 2018.3.2. onwards #}
-      archive_format: tar.gz
+      archive_suffix: tar.gz
+      archive_format: tar
       enforce_toplevel: True
     repo: {}
 

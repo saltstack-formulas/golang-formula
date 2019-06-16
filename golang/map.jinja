@@ -54,9 +54,9 @@
     {%- set uri = golang.pkg.archive.uri + '/' + name %}
     {%- do golang.pkg.archive.update({
            'name':           golang.pkg.archive.name + '/' + name,
-           'source':         uri + '.' + golang.pkg.archive.archive_format,
-           'source_hash':    uri + '.' + golang.pkg.archive.archive_format + '.sha256',
-           'archive_format': golang.pkg.archive.archive_format.split('.')[0]
+           'source':         uri + '.' + golang.pkg.archive.archive_suffix,
+           'source_hash':    uri + '.' + golang.pkg.archive.archive_suffix + '.sha256',
+           'archive_format': golang.pkg.archive.archive_format
     }) %}
     {%- do golang.update({'base_dir': golang.pkg.archive.name}) %}
     {%- do golang.environ.append('export PATH=${PATH}:' + golang.pkg.archive.name) %}

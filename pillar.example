@@ -8,8 +8,6 @@ golang:
     winner: lookup
     added_in_lookup: lookup_value
 
-  # Using package archive as an example to test golang formula itself.
-  # You should set these parameters to values that make sense.
   pkg:
     archive:
       uri: https://storage.googleapis.com/golang
