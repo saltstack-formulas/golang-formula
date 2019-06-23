@@ -2,5 +2,5 @@
 # vim: ft=sls
 
 include:
-  - .config.clean
-  - .archive.clean
+  - .environ
+  - .alternatives

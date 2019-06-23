@@ -1,0 +1,56 @@
+# -*- coding: utf-8 -*-                                                                                             
+# vim: ft=yaml
+#
+# Setup variables using grains['os_family'] based logic.
+# You just need to add the key:values for an `os_family` that differ
+# from `defaults.yaml`.
+# Only add an `os_family` which is/will be supported by the formula
+#
+# If you do not need to provide defaults via the `os_family` grain,
+# you will need to provide at least an empty dict in this file, e.g.
+# osfamilymap: {}
+---
+{%- if grains.os == 'MacOS' %}
+{%-   set macos_rootgroup = salt['cmd.run']("stat -f '%Sg' /dev/console") %}
+{%- endif %}
+
+Debian: {}
+
+RedHat: {}
+
+Suse: {}
+
+Gentoo: {}
+
+Arch: {}
+
+Alpine: {}
+
+FreeBSD:
+  rootgroup: wheel
+  pkg:
+    archive:
+      source: https://storage.googleapis.com/golang/go1.10.2.freebsd-386.tar.gz
+
+OpenBSD:
+  rootgroup: wheel
+  pkg:
+    repo:
+      name: ports
+      comments:
+        - installed by salt
+
+Solaris: {}
+
+Windows:
+  pkg:
+    archive:
+      name: 'C:\\Program Files\\'
+      source: https://storage.googleapis.com/golang/go1.10.1.linux-amd64.tar.gz
+
+MacOS:
+  rootgroup: {{ macos_rootgroup | d('') }}
+  pkg:
+    archive:
+      source: https://storage.googleapis.com/golang/go1.10.2.darwin-amd64.tar.gz
+
