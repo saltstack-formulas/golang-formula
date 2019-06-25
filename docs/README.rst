@@ -1,7 +1,7 @@
 .. _readme:
 
 golang-formula
-================
+==============
 
 |img_travis| |img_sr|
 
@@ -47,7 +47,7 @@ Available states
    :local:
 
 ``golang``
-^^^^^^^^^^^^
+^^^^^^^^^^
 
 *Meta-state (This is a state that includes other states)*.
 
@@ -56,24 +56,24 @@ manages the golang configuration file and then
 starts the associated golang service.
 
 ``golang.package``
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 This state will install the golang package only.
 
 ``golang.config``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 This state will configure the golang service and has a dependency on ``golang.install``
 via include list.
 
 ``golang.service``
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 This state will start the golang service and has a dependency on ``golang.config``
 via include list.
 
 ``golang.clean``
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 *Meta-state (This is a state that includes other states)*.
 
@@ -83,18 +83,18 @@ removes the configuration file and
 then uninstalls the package.
 
 ``golang.service.clean``
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 This state will stop the golang service and disable it at boot time.
 
 ``golang.config.clean``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 This state will remove the configuration of the golang service and has a
 dependency on ``golang.service.clean`` via include list.
 
 ``golang.package.clean``
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 This state will remove the golang package and has a depency on
 ``golang.config.clean`` via include list.
