@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.3.2 <https://github.com/saltstack-formulas/golang-formula/compare/v0.3.1...v0.3.2>`_ (2019-06-28)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **\ ``semantic-release``\ :** finalise changes from ``template-formula`` (\ `a38392d <https://github.com/saltstack-formulas/golang-formula/commit/a38392d>`_\ ), closes `#20 <https://github.com/saltstack-formulas/golang-formula/issues/20>`_
+
 `0.3.1 <https://github.com/saltstack-formulas/golang-formula/compare/v0.3.0...v0.3.1>`_ (2019-06-25)
 --------------------------------------------------------------------------------------------------------
 
