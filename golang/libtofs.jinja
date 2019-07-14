@@ -30,7 +30,7 @@
           - source: {{ files_switch(['/etc/yyy/zzz.conf', '/etc/yyy/zzz.conf.jinja'],
                                     lookup='Deploy configuration'
                     ) }}
-          - golang: jinja
+          - template: jinja
 
     In a minion with id=theminion and os_family=RedHat, it's going to be
     rendered as:
@@ -45,7 +45,7 @@
             - salt://xxx/files/RedHat/etc/yyy/zzz.conf.jinja
             - salt://xxx/files/default/etc/yyy/zzz.conf
             - salt://xxx/files/default/etc/yyy/zzz.conf.jinja
-          - golang: jinja
+          - template: jinja
   #}
   {#- Get the `tplroot` from `tpldir` #}
   {%- set tplroot = tpldir.split('/')[0] %}
