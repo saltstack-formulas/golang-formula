@@ -4,7 +4,7 @@ control 'golang tarball archive' do
   impact 1.0
   title 'should be installed'
   desc "Ensure golang tarball archive was extracted correctly"
-  tag: package: "tarball archive"
+  tag package: "tarball archive"
 
   describe file('/usr/local/go1.10.1.linux-amd64/go') do     # another test 
     it { should be_directory }
