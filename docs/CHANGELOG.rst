@@ -2,6 +2,16 @@
 Changelog
 =========
 
+`0.3.3 <https://github.com/saltstack-formulas/golang-formula/compare/v0.3.2...v0.3.3>`_ (2019-07-23)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **archives_spec:** check ``sha256sum`` for correct file (\ `99aa62e <https://github.com/saltstack-formulas/golang-formula/commit/99aa62e>`_\ )
+* **archives_spec:** remove colon from ``tag:`` (\ `57d445c <https://github.com/saltstack-formulas/golang-formula/commit/57d445c>`_\ )
+
 `0.3.2 <https://github.com/saltstack-formulas/golang-formula/compare/v0.3.1...v0.3.2>`_ (2019-06-28)
 --------------------------------------------------------------------------------------------------------
 
