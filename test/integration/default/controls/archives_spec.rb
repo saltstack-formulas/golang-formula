@@ -4,7 +4,7 @@ control 'golang tarball archive' do
   impact 1.0
   title 'should be installed'
   desc "Ensure golang tarball archive was extracted correctly"
-  tag: package: "tarball archive"
+  tag package: "tarball archive"
 
   describe file('/usr/local/go1.10.1.linux-amd64/go') do     # another test 
     it { should be_directory }
@@ -29,7 +29,7 @@ control 'golang tarball archive' do
 
   binary = file('/usr/local/go1.10.1.linux-amd64/go/bin/gofmt').content
   sha256sum = Digest::SHA256.hexdigest(binary)
-  describe file('/usr/local/go1.10.1.linux-amd64/go/bin/go') do
+  describe file('/usr/local/go1.10.1.linux-amd64/go/bin/gofmt') do
     its('sha256sum') { should eq '5673f5914f195331322b20aee026f1882dac7c92b61c41bae23a04fb803b3e2c' }
   end
 
