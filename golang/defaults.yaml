@@ -7,21 +7,22 @@ golang:
   go_path: /usr/local/golang/packages
   pkg:
     name: go
-    use_upstream_repo: False
-    use_upstream_archive: True
+    use_upstream_repo: false
+    use_upstream_archive: true
     archive:
       name: /usr/local
       uri: https://storage.googleapis.com/golang
       source: None
       source_hash: None
-      trim_output: True   {# works in 2018.3.2. onwards #}
+      trim_output: true  # works in 2018.3.2. onwards
       archive_suffix: tar.gz
       archive_format: tar
-      enforce_toplevel: True
+      enforce_toplevel: true
     repo: {}
 
   rootgroup: root
-  kernel: {{ grains.kernel | lower }}
+  # Provided in `map.jinja` via. `grains.kernel`
+  kernel: ''
   config: '/etc/golang'
   environ_file: /etc/default/golang.sh
   environ: []
@@ -32,5 +33,5 @@ golang:
   winner: defaults
 
   linux:
-    #'Alternatives system' priority: zero disables (default)
+    # 'Alternatives system' priority: zero disables (default)
     altpriority: 0
