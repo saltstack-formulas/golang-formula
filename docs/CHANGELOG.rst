@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.4.0 <https://github.com/saltstack-formulas/golang-formula/compare/v0.3.3...v0.4.0>`_ (2019-08-17)
+--------------------------------------------------------------------------------------------------------
+
+Features
+^^^^^^^^
+
+
+* **yamllint:** include for this repo and apply rules throughout (\ `76262f8 <https://github.com/saltstack-formulas/golang-formula/commit/76262f8>`_\ )
+
 `0.3.3 <https://github.com/saltstack-formulas/golang-formula/compare/v0.3.2...v0.3.3>`_ (2019-07-23)
 --------------------------------------------------------------------------------------------------------
 
