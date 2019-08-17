@@ -47,6 +47,12 @@
 %}
 {%- set golang = config %}
 
+{#- Post-processing for specific non-YAML customisations #}
+{%- do golang.update({'kernel': grains.kernel | lower}) %}
+{%- if grains.os == 'MacOS' %}
+{%-   set macos_group = salt['cmd.run']("stat -f '%Sg' /dev/console") %}
+{%-   do golang.update({'rootgroup': macos_group}) %}
+{%- endif %}
 
 {#- archive jinja #}
 {%- if golang.pkg.use_upstream_archive %}

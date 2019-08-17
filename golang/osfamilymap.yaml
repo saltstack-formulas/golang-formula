@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-                                                                                             
+# -*- coding: utf-8 -*-
 # vim: ft=yaml
 #
 # Setup variables using grains['os_family'] based logic.
@@ -10,10 +10,6 @@
 # you will need to provide at least an empty dict in this file, e.g.
 # osfamilymap: {}
 ---
-{%- if grains.os == 'MacOS' %}
-{%-   set macos_rootgroup = salt['cmd.run']("stat -f '%Sg' /dev/console") %}
-{%- endif %}
-
 Debian: {}
 
 RedHat: {}
@@ -49,8 +45,6 @@ Windows:
       source: https://storage.googleapis.com/golang/go1.10.1.linux-amd64.tar.gz
 
 MacOS:
-  rootgroup: {{ macos_rootgroup | d('') }}
   pkg:
     archive:
       source: https://storage.googleapis.com/golang/go1.10.2.darwin-amd64.tar.gz
-
