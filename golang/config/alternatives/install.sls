@@ -44,7 +44,7 @@ golang-package-archive-install-home-alternative-set:
 
 golang-package-archive-install-{{ i }}-alternative-install:
   cmd.run:
-    - name: update-alternatives --install /usr/bin/{{i}} link-{{i}} {{ golang.base_dir }}/go/bin/{{i}} {{golang.linux.altpriority}}
+    - name: update-alternatives --install /usr/bin/{{ i }} link-{{ i }} {{ golang.base_dir }}/go/bin/{{ i }} {{ golang.linux.altpriority }}
     - require:
       - cmd: golang-package-archive-install-home-alternative-install
     - onlyif: {{ grains.os_family in ('Suse',) }}
