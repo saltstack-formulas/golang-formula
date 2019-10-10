@@ -2,6 +2,29 @@
 Changelog
 =========
 
+`0.4.1 <https://github.com/saltstack-formulas/golang-formula/compare/v0.4.0...v0.4.1>`_ (2019-10-10)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **install.sls:** fix ``salt-lint`` errors (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/4193037>`_\ )
+* **install.sls:** fix ``salt-lint`` errors (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/c23bce9>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen:** change ``log_level`` to ``debug`` instead of ``info`` (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/793fd34>`_\ )
+* **kitchen:** install required packages to bootstrapped ``opensuse`` [skip ci] (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/faad94f>`_\ )
+* **kitchen:** use bootstrapped ``opensuse`` images until ``2019.2.2`` [skip ci] (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/2cdbe09>`_\ )
+* **kitchen+travis:** replace EOL pre-salted images (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/b0ee510>`_\ )
+* **platform:** add ``arch-base-latest`` (commented out for now) [skip ci] (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/bbf9fa1>`_\ )
+* **yamllint:** add rule ``empty-values`` & use new ``yaml-files`` setting (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/fa990a9>`_\ )
+* merge travis matrix, add ``salt-lint`` & ``rubocop`` to ``lint`` job (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/2ab9c36>`_\ )
+* use ``dist: bionic`` & apply ``opensuse-leap-15`` SCP error workaround (\ ` <https://github.com/saltstack-formulas/golang-formula/commit/0977f1f>`_\ )
+
 `0.4.0 <https://github.com/saltstack-formulas/golang-formula/compare/v0.3.3...v0.4.0>`_ (2019-08-17)
 --------------------------------------------------------------------------------------------------------
 
