@@ -2,6 +2,47 @@
 Changelog
 =========
 
+`0.5.0 <https://github.com/saltstack-formulas/golang-formula/compare/v0.4.1...v0.5.0>`_ (2019-11-18)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **lint:** remove trailing whitespace (\ `376ae12 <https://github.com/saltstack-formulas/golang-formula/commit/376ae120e51ea5a999bd08b2a1fbc63fbaa4fb71>`_\ )
+* **release.config.js:** use full commit hash in commit link [skip ci] (\ `1ad448c <https://github.com/saltstack-formulas/golang-formula/commit/1ad448c5826b1c94aadf8b6505534cb823ba454d>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen:** use ``debian-10-master-py3`` instead of ``develop`` [skip ci] (\ `abb585a <https://github.com/saltstack-formulas/golang-formula/commit/abb585a25dcdd25ae502bfcd0bfe2ad70e1b8963>`_\ )
+* **kitchen:** use ``develop`` image until ``master`` is ready (\ ``amazonlinux``\ ) [skip ci] (\ `fef6a02 <https://github.com/saltstack-formulas/golang-formula/commit/fef6a02c650c06a3525f63d76758826632504ee6>`_\ )
+* **kitchen+travis:** upgrade matrix after ``2019.2.2`` release [skip ci] (\ `482a5cf <https://github.com/saltstack-formulas/golang-formula/commit/482a5cf341beadadbddf5b44655bc584f9bc85c8>`_\ )
+* **travis:** apply changes from build config validation [skip ci] (\ `11a27e2 <https://github.com/saltstack-formulas/golang-formula/commit/11a27e2bb98e010830144fa2c99a583576fe0eb5>`_\ )
+* **travis:** update ``salt-lint`` config for ``v0.0.10`` [skip ci] (\ `f338411 <https://github.com/saltstack-formulas/golang-formula/commit/f338411dd882e0440989376bf3990ae8ee6dd436>`_\ )
+* **travis:** use build config validation (beta) [skip ci] (\ `ecbb850 <https://github.com/saltstack-formulas/golang-formula/commit/ecbb8503ffb586945fc87d1ccda4188e59582017>`_\ )
+* merge travis matrix, add ``salt-lint`` & ``rubocop`` to ``lint`` job (\ `3423c80 <https://github.com/saltstack-formulas/golang-formula/commit/3423c80004190e433926a4a172cecd66cc435828>`_\ )
+
+Documentation
+^^^^^^^^^^^^^
+
+
+* **contributing:** remove to use org-level file instead [skip ci] (\ `1501bc4 <https://github.com/saltstack-formulas/golang-formula/commit/1501bc443ef0d0ef7603d78c30d020f4e48c2a87>`_\ )
+* **readme:** update link to ``CONTRIBUTING`` [skip ci] (\ `8dd1192 <https://github.com/saltstack-formulas/golang-formula/commit/8dd11925e183a88c28b73d6a6a2eea20a30d4af1>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **go.cmd:** basic go command support (\ `34653d5 <https://github.com/saltstack-formulas/golang-formula/commit/34653d51d6065204bd175f5fcfb91f845ef52bca>`_\ )
+
+Performance Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **travis:** improve ``salt-lint`` invocation [skip ci] (\ `3e1c574 <https://github.com/saltstack-formulas/golang-formula/commit/3e1c574d691028e220e9c628a20dbf549a0d1c7a>`_\ )
+
 `0.4.1 <https://github.com/saltstack-formulas/golang-formula/compare/v0.4.0...v0.4.1>`_ (2019-10-10)
 --------------------------------------------------------------------------------------------------------
 
