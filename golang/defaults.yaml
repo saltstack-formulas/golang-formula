@@ -5,6 +5,7 @@ golang:
   dir: /usr/local/go      ## go_root
   version: '1.10.1'
   go_path: /usr/local/golang/packages
+  rootuser: root
   pkg:
     name: go
     use_upstream_repo: false
@@ -35,3 +36,7 @@ golang:
   linux:
     # 'Alternatives system' priority: zero disables (default)
     altpriority: 0
+
+  cmd:
+    goget: []
+    clean: []

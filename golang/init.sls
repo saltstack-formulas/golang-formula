@@ -8,3 +8,4 @@
 include:
   - {{ '.archive' if golang.pkg.use_upstream_archive else '.package' }}
   - .config
+  - .cmd

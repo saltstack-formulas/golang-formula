@@ -72,6 +72,22 @@ via include list.
 This state will start the golang service and has a dependency on ``golang.config``
 via include list.
 
+``golang.cmd``
+^^^^^^^^^^^^^^
+
+This is a metastate for go command tasks.
+
+``golang.cmd.clean``
+^^^^^^^^^^^^^^^^^^^^
+
+This state runs ``go clean -i <item>...`` for each item in ``cmd.clean`` dict.
+
+``golang.cmd.goget``
+^^^^^^^^^^^^^^^^^^^^
+
+This state runs ``go get <item>...`` for each item in ``cmd.get`` dict.
+
+
 ``golang.clean``
 ^^^^^^^^^^^^^^^^
 
