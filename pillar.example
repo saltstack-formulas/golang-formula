@@ -14,7 +14,15 @@ golang:
 
   linux:
     # 'Alternatives system' priority: zero disables (default)
-    altpriority: 1000
+    altpriority: 9100
+
+  cmd:
+    goget:
+      - github.com/golang/example/hello
+      - github.com/golang/example/outyet
+    clean:
+      - github.com/golang/example/hello
+      - github.com/golang/example/outyet
 
   tofs:
     # The files_switch key serves as a selector for alternative
