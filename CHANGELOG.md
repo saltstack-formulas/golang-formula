@@ -1,5 +1,32 @@
 # Changelog
 
+# [0.6.0](https://github.com/saltstack-formulas/golang-formula/compare/v0.5.0...v0.6.0) (2020-01-25)
+
+
+### Continuous Integration
+
+* **gemfile:** restrict `train` gem version until upstream fix [skip ci] ([7500241](https://github.com/saltstack-formulas/golang-formula/commit/75002412d5dd1ebe533e84e27506bf850218c146))
+* **travis:** opt-in to `dpl v2` to complete build config validation [skip ci] ([a9f7692](https://github.com/saltstack-formulas/golang-formula/commit/a9f769262b4d5e9d5a0d03acce2a91e55720e1b3))
+* **travis:** quote pathspecs used with `git ls-files` [skip ci] ([58507a1](https://github.com/saltstack-formulas/golang-formula/commit/58507a15e8229f691a5867ba6e1c3401bc36ef42))
+* **travis:** run `shellcheck` during lint job [skip ci] ([1888009](https://github.com/saltstack-formulas/golang-formula/commit/1888009847005c12edbad044c3bd99be4c0e8c47))
+* **travis:** use `major.minor` for `semantic-release` version [skip ci] ([beec7fc](https://github.com/saltstack-formulas/golang-formula/commit/beec7fc37e6507dcda27ed35cd9cca5bb6c01f64))
+
+
+### Documentation
+
+* **readme:** clarify gopath and goroot ([22c320e](https://github.com/saltstack-formulas/golang-formula/commit/22c320eb9819259bb92577889a525cd922441825))
+
+
+### Features
+
+* **alternatives,macos:** better msupport ([6d3286d](https://github.com/saltstack-formulas/golang-formula/commit/6d3286d135aebbb15e815569f66bc885147cb428))
+
+
+### Tests
+
+* **env:** update paths ([6915789](https://github.com/saltstack-formulas/golang-formula/commit/69157892927eb2a2d0301fbf09c93f7cb9298546))
+* **rubo:** fix some lint errors ([a0c49f3](https://github.com/saltstack-formulas/golang-formula/commit/a0c49f31d6dd896ab5eb7e3ea30a3c06692c745e))
+
 # [0.5.0](https://github.com/saltstack-formulas/golang-formula/compare/v0.4.1...v0.5.0) (2019-11-18)
 
 
