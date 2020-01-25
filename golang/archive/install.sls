@@ -11,8 +11,8 @@ golang-package-archive-install-file-directory:
     - names:
       - {{ golang.pkg.archive.name }}
       - {{ golang.go_path }}
-    - user: root
-    - group: root
+    - user: {{ golang.rootuser }}
+    - group: {{ golang.rootgroup }}
     - mode: 755
     - makedirs: True
     - require_in:

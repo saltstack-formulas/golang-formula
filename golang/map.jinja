@@ -50,8 +50,12 @@
 {#- Post-processing for specific non-YAML customisations #}
 {%- do golang.update({'kernel': grains.kernel | lower}) %}
 {%- if grains.os == 'MacOS' %}
+{%-   set macos_user = salt['cmd.run']("stat -f '%Su' /dev/console") %}
 {%-   set macos_group = salt['cmd.run']("stat -f '%Sg' /dev/console") %}
-{%-   do golang.update({'rootgroup': macos_group}) %}
+{%-   do golang.update({'rootuser': macos_user,
+                        'rootgroup': macos_group,
+                        'go_path': '/Users/%s/go'|format(golang.rootuser)
+                      }) %}
 {%- endif %}
 
 {#- archive jinja #}
@@ -64,6 +68,11 @@
            'source_hash':    uri + '.' + golang.pkg.archive.archive_suffix + '.sha256',
            'archive_format': golang.pkg.archive.archive_format
     }) %}
-    {%- do golang.update({'base_dir': golang.pkg.archive.name}) %}
-    {%- do golang.environ.append('export PATH=${PATH}:' + golang.pkg.archive.name) %}
+    {%- do golang.linux.update({'base_dir': golang.pkg.archive.name}) %}
+    {%- do golang.environ.append('export PATH=${PATH}:%s/go/bin'|format(golang.pkg.archive.name)) %}
+{%- endif %}
+
+{#- Post-processing for specific YAML keys depreciated in a major releases #}
+{%- if 'dir' in golang and golang.dir and golang.kernel == 'linux' %}
+{%-    do golang.linux.update({'dir': golang.dir}) %}
 {%- endif %}
