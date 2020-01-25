@@ -2,10 +2,10 @@
 # vim: ft=yaml
 ---
 golang:
-  dir: /usr/local/go      ## go_root
   version: '1.10.1'
-  go_path: /usr/local/golang/packages
+  go_path: /usr/local/golang/packages   # non-default GOPATH
   rootuser: root
+  rootgroup: root
   pkg:
     name: go
     use_upstream_repo: false
@@ -21,7 +21,6 @@ golang:
       enforce_toplevel: true
     repo: {}
 
-  rootgroup: root
   # Provided in `map.jinja` via. `grains.kernel`
   kernel: ''
   config: '/etc/golang'
@@ -36,6 +35,9 @@ golang:
   linux:
     # 'Alternatives system' priority: zero disables (default)
     altpriority: 0
+    # for linux alternatives only
+    base_dir: ''
+    dir: /usr/local/go        # go_root
 
   cmd:
     goget: []

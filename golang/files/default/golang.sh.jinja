@@ -3,11 +3,15 @@
 # Your changes may be overwritten.
 ########################################################################
 
-export GOROOT={{ golang.dir }}
-export GOPATH={{ golang.go_path }}
-export GOBASE={{ golang.base_dir }}/go
-export PATH=$PATH:$GOROOT/bin:$GOBASE/bin
+##portable shell syntax
 
+[ -n "${GOROOT}" ] && export GOROOT=${GOROOT}
+[ -n "{{ golang.linux.base_dir }}" ] && export GOROOT={{ golang.linux.base_dir }}
+
+[ -n "${GOPATH}" ] && export GOPATH=${GOPATH}
+[ -n "{{ golang.go_path }}" ] && export GOPATH={{ golang.go_path }}
+
+export PATH=$PATH:${GOROOT}/go/bin
 
 {%- if golang.environ %}
     {%- for item in golang.environ %}

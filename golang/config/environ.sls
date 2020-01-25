@@ -19,7 +19,7 @@ golang-config-file-managed-environ_file:
                  )
               }}
     - mode: 644
-    - user: root
+    - user: {{ golang.rootuser }}
     - group: {{ golang.rootgroup }}
     - makedirs: True
     - template: jinja

@@ -31,6 +31,8 @@ If you are interested in writing or contributing to formulas, please pay attenti
 If you want to use this formula, please pay attention to the ``FORMULA`` file and/or ``git tag``,
 which contains the currently released version. This formula is versioned according to `Semantic Versioning <http://semver.org/>`_.
 
+If you need (non-default) configuration, please pay attention to the ``pillar.example`` file and/or `Special notes`_ section.
+
 See `Formula Versioning Section <https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#versioning>`_ for more details.
 
 Contributing to this repo
@@ -39,6 +41,11 @@ Contributing to this repo
 **Commit message formatting is significant!!**
 
 Please see `How to contribute <https://github.com/saltstack-formulas/.github/blob/master/CONTRIBUTING.rst>`_ for more details.
+
+Special notes
+-------------
+
+This formula uses (non-default) GOPATH environment variable on Unix by default; see ``go_path`` key in ``defaults.yaml`` and ``pillar.example`` files. Normally GOPATH defaults to ``$HOME/go`` on Unix/Darwin, ``$home/go`` on Plan9, and ``%USERPROFILE%\go`` on Windows; another common setup is ``GOPATH=$HOME && export PATH=$PATH:$(go env GOPATH)/bin`` too.
 
 Available states
 ----------------
