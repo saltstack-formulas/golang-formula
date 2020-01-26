@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/saltstack-formulas/golang-formula/compare/v0.6.0...v0.6.1) (2020-01-26)
+
+
+### Bug Fixes
+
+* **gemfile:** restore content inadvertently removed ([5bb9f41](https://github.com/saltstack-formulas/golang-formula/commit/5bb9f41c248f3b4200be236328d00e54ea834c33))
+
 # [0.6.0](https://github.com/saltstack-formulas/golang-formula/compare/v0.5.0...v0.6.0) (2020-01-25)
 
 
