@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.6.2](https://github.com/saltstack-formulas/golang-formula/compare/v0.6.1...v0.6.2) (2020-03-19)
+
+
+### Bug Fixes
+
+* **alternatives:** better no alternatives support ([04caf8e](https://github.com/saltstack-formulas/golang-formula/commit/04caf8eac0bb15e4a113a73fa3c54b97b341724a))
+* **libtofs:** “files_switch” mess up the variable exported by “map.jinja” [skip ci] ([e38ff4b](https://github.com/saltstack-formulas/golang-formula/commit/e38ff4b13f612b08c64089cf0bf84ade44f433d5))
+
+
+### Continuous Integration
+
+* **kitchen:** avoid using bootstrap for `master` instances [skip ci] ([959cc56](https://github.com/saltstack-formulas/golang-formula/commit/959cc561d42539d3cf654010cff9eb77056d4261))
+
+
+### Tests
+
+* **rubucop:** fix rubo issues ([ccc1f07](https://github.com/saltstack-formulas/golang-formula/commit/ccc1f072994e376904634c272335fccee2b9082b))
+
 ## [0.6.1](https://github.com/saltstack-formulas/golang-formula/compare/v0.6.0...v0.6.1) (2020-01-26)
 
 
