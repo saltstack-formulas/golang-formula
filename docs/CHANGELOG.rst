@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.6.3 <https://github.com/saltstack-formulas/golang-formula/compare/v0.6.2...v0.6.3>`_ (2020-03-28)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **hardcoding:** configurable user/group (\ `1f03949 <https://github.com/saltstack-formulas/golang-formula/commit/1f03949d8c66148ebba995f45f14a8837f454281>`_\ )
+
 `0.6.2 <https://github.com/saltstack-formulas/golang-formula/compare/v0.6.1...v0.6.2>`_ (2020-03-19)
 --------------------------------------------------------------------------------------------------------
 
