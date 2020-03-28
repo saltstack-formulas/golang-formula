@@ -30,5 +30,5 @@ golang-package-archive-install-archive-extracted:
         until: True
         interval: 60
         splay: 10
-    - user: root
-    - group: root
+    - user: {{ golang.rootuser }}
+    - group: {{ golang.rootgroup }}
