@@ -67,7 +67,7 @@
     {%- do golang.environ.append('export PATH=${PATH}:%s/go/bin'|format(golang.pkg.archive.name)) %}
 {%- endif %}
 
-{#- Depreciated parameter 'golang.dir' %}
+{#- Depreciated parameter 'golang.dir' #}
 {%- if 'dir' in golang and golang.dir and golang.kernel == 'linux' %}
 {%-    do golang.linux.update({'dir': golang.dir}) %}
 {%- endif %}
