@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
 # vim: ft=jinja
 
-{#- Get the `tplroot` from `tpldir` #}
 {%- set tplroot = tpldir.split('/')[0] %}
-{#- Start imports as #}
 {%- import_yaml tplroot ~ "/defaults.yaml" as default_settings %}
 {%- import_yaml tplroot ~ "/osfamilymap.yaml" as osfamilymap %}
 {%- import_yaml tplroot ~ "/osmap.yaml" as osmap %}
 {%- import_yaml tplroot ~ "/osarchmap.yaml" as osarchmap %}
 {%- import_yaml tplroot ~ "/osfingermap.yaml" as osfingermap %}
 
-{#- Retrieve the config dict only once #}
 {%- set _config = salt['config.get'](tplroot, default={}) %}
 
 {%- set defaults = salt['grains.filter_by'](
@@ -47,7 +44,6 @@
 %}
 {%- set golang = config %}
 
-{#- Post-processing for specific non-YAML customisations #}
 {%- do golang.update({'kernel': grains.kernel | lower}) %}
 {%- if grains.os == 'MacOS' %}
 {%-   set macos_user = salt['cmd.run']("stat -f '%Su' /dev/console") %}
@@ -58,7 +54,6 @@
                       }) %}
 {%- endif %}
 
-{#- archive jinja #}
 {%- if golang.pkg.use_upstream_archive %}
     {%- set name = 'go%s.%s-%s'|format(golang.version, golang.kernel, golang.arch) %}
     {%- set uri = golang.pkg.archive.uri + '/' + name %}
@@ -72,7 +67,7 @@
     {%- do golang.environ.append('export PATH=${PATH}:%s/go/bin'|format(golang.pkg.archive.name)) %}
 {%- endif %}
 
-{#- Post-processing for specific YAML keys depreciated in a major releases #}
+{#- Depreciated parameter 'golang.dir' %}
 {%- if 'dir' in golang and golang.dir and golang.kernel == 'linux' %}
 {%-    do golang.linux.update({'dir': golang.dir}) %}
 {%- endif %}
