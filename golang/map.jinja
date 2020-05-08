@@ -63,7 +63,7 @@
            'source_hash':    uri + '.' + golang.pkg.archive.archive_suffix + '.sha256',
            'archive_format': golang.pkg.archive.archive_format
     }) %}
-    {%- do golang.linux.update({'base_dir': golang.pkg.archive.name}) %}
+    {%- do golang.update({'path': golang.pkg.archive.name}) %}
     {%- do golang.environ.append('export PATH=${PATH}:%s/go/bin'|format(golang.pkg.archive.name)) %}
 {%- endif %}
 

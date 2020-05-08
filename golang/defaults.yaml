@@ -6,6 +6,7 @@ golang:
   go_path: /usr/local/golang/packages   # non-default GOPATH
   rootuser: root
   rootgroup: root
+  command: go/bin/go
   pkg:
     name: go
     use_upstream_repo: false
@@ -22,7 +23,7 @@ golang:
     repo: {}
 
   # Provided in `map.jinja` via. `grains.kernel`
-  kernel: ''
+  kernel: null
   config: '/etc/golang'
   environ_file: /etc/default/golang.sh
   environ: []
@@ -37,8 +38,15 @@ golang:
     altpriority: 0
     # for linux alternatives only
     base_dir: ''
-    dir: /usr/local/go        # go_root
+    dir: /usr/local/go        # go_root, depreciated
 
   cmd:
     goget: []
     clean: []
+
+  retry_option:
+    # https://docs.saltstack.com/en/latest/ref/states/requisites.html#retrying-states
+    attempts: 2
+    until: true
+    interval: 10
+    splay: 10
