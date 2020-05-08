@@ -10,5 +10,6 @@ golang-cmd-goget-cmd-run-go-get-{{ package }}:
   cmd.run:
     - name: go get {{ package }}
     - runas: {{ golang.rootuser }}
+    - onlyif: which go || test -f /usr/local/bin/go
 
     {%- endfor %}
