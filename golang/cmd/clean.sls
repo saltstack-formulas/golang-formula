@@ -11,5 +11,6 @@ golang-cmd-clean-cmd-run-go-clean-{{ package }}:
   cmd.run:
     - name: go clean -i {{ package }}...
     - runas: {{ golang.rootuser }}
+    - onlyif: which go || test -f /usr/local/bin/go
 
     {%- endfor %}
