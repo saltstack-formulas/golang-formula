@@ -2,6 +2,21 @@
 Changelog
 =========
 
+`0.6.5 <https://github.com/saltstack-formulas/golang-formula/compare/v0.6.4...v0.6.5>`_ (2020-05-21)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **config:** godoc command not in go1.14 (\ `97e3f3a <https://github.com/saltstack-formulas/golang-formula/commit/97e3f3ac1586b8d81a6b0130c10431abc9d428f9>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **tests:** fix and simplify tests (\ `e4fb434 <https://github.com/saltstack-formulas/golang-formula/commit/e4fb4340b95a4c5866d75cb593ae17acd92ddfa3>`_\ )
+
 `0.6.4 <https://github.com/saltstack-formulas/golang-formula/compare/v0.6.3...v0.6.4>`_ (2020-05-21)
 --------------------------------------------------------------------------------------------------------
 
