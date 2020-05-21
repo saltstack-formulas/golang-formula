@@ -20,7 +20,7 @@ golang-package-archive-remove-home-alternative-remove:
     - require:
       - sls: {{ sls_archive_clean if golang.pkg.use_upstream_archive else sls_package_clean }}
 
-      {% for i in ['go', 'godoc', 'gofmt'] %}
+      {% for i in ('go', 'gofmt') %}
 
 golang-package-archive-remove-{{ i }}-alternative-remove:
   alternatives.remove:

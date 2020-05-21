@@ -2,7 +2,7 @@
 # vim: ft=yaml
 ---
 golang:
-  version: '1.10.1'
+  version: 1.14.2
   go_path: /usr/local/golang/packages   # non-default GOPATH
   rootuser: root
   rootgroup: root
@@ -13,16 +13,16 @@ golang:
     archive:
       name: /usr/local
       uri: https://storage.googleapis.com/golang
-      source: None
-      source_hash: None
-      trim_output: true  # works in 2018.3.2. onwards
+      source: null
+      source_hash: null
+      trim_output: true
       archive_suffix: tar.gz
       archive_format: tar
       enforce_toplevel: true
     repo: {}
 
   # Provided in `map.jinja` via. `grains.kernel`
-  kernel: ''
+  kernel: null
   config: '/etc/golang'
   environ_file: /etc/default/golang.sh
   environ: []
@@ -37,7 +37,7 @@ golang:
     altpriority: 0
     # for linux alternatives only
     base_dir: ''
-    dir: /usr/local/go        # go_root
+    dir: /usr/local/go        # go_root, depreciated
 
   cmd:
     goget: []

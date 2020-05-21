@@ -41,7 +41,7 @@ golang-package-archive-install-home-alternative-set:
       - alternatives: golang-package-archive-install-home-alternative-install
     - unless: {{ grains.os_family in ('Suse',) }}
 
-          {% for i in ['go', 'godoc', 'gofmt'] %}
+          {% for i in ('go', 'gofmt') %}
 
 golang-package-archive-install-{{ i }}-alternative-install:
   cmd.run:
