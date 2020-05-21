@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.6.4](https://github.com/saltstack-formulas/golang-formula/compare/v0.6.3...v0.6.4) (2020-05-21)
+
+
+### Bug Fixes
+
+* **cmd:** only run go cmd if go cmd found ([142f89d](https://github.com/saltstack-formulas/golang-formula/commit/142f89dede5cf66539f60641fb62df6bdff72f07))
+
+
+### Continuous Integration
+
+* **gemfile.lock:** add to repo with updated `Gemfile` [skip ci] ([f776591](https://github.com/saltstack-formulas/golang-formula/commit/f776591e3f1b689c9f93e03394e9d88e04645320))
+* **kitchen+travis:** remove `master-py2-arch-base-latest` [skip ci] ([2dd532a](https://github.com/saltstack-formulas/golang-formula/commit/2dd532a96de0732c9731c33c9bc5b0dca334eb78))
+* **travis:** add notifications => zulip [skip ci] ([01fa4d1](https://github.com/saltstack-formulas/golang-formula/commit/01fa4d1dd1277843932019a966d253bcd381a2a7))
+* **workflows/commitlint:** add to repo [skip ci] ([a2a2d7d](https://github.com/saltstack-formulas/golang-formula/commit/a2a2d7d4d7017e73ac9040b6c7b6d572427a0066))
+
 ## [0.6.3](https://github.com/saltstack-formulas/golang-formula/compare/v0.6.2...v0.6.3) (2020-03-28)
 
 
