@@ -2,6 +2,27 @@
 Changelog
 =========
 
+`0.7.0 <https://github.com/saltstack-formulas/golang-formula/compare/v0.6.5...v0.7.0>`_ (2020-06-03)
+--------------------------------------------------------------------------------------------------------
+
+Code Refactoring
+^^^^^^^^^^^^^^^^
+
+
+* **ci:** move superfluous ruby file (\ `3df2daa <https://github.com/saltstack-formulas/golang-formula/commit/3df2daac7a579c1bd082d887e95d3f8f011e1fd6>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen+travis:** use latest pre-salted images (\ `ed45614 <https://github.com/saltstack-formulas/golang-formula/commit/ed4561457bd4dc450fe2637d9f5e9dcb92031444>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **macos:** support for homebrew (\ `8a9b380 <https://github.com/saltstack-formulas/golang-formula/commit/8a9b3806ef1c147bf84247b0649f00e41c1f4f96>`_\ )
+
 `0.6.5 <https://github.com/saltstack-formulas/golang-formula/compare/v0.6.4...v0.6.5>`_ (2020-05-21)
 --------------------------------------------------------------------------------------------------------
 
