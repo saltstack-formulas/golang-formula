@@ -25,10 +25,17 @@ golang-package-archive-install-file-directory:
 golang-package-archive-install-archive-extracted:
   archive.extracted:
     {{- format_kwargs(golang.pkg.archive) }}
-    - retry:
-        attempts: 3
-        until: True
-        interval: 60
-        splay: 10
+    - retry: {{ golang.retry_option }}
     - user: {{ golang.rootuser }}
     - group: {{ golang.rootgroup }}
+
+    {%- if golang.linux.altpriority|int == 0 or grains.os_family in ('Arch', 'MacOS',)  %}
+
+golang-archive-install-file-symlink-golang:
+  file.symlink:
+    - name: /usr/local/bin/go
+    - target: {{ golang.path }}/{{ golang.command }}
+    - force: True
+    - onlyif: test -f {{ golang.path }}/{{ golang.command }}
+
+    {%- endif %}

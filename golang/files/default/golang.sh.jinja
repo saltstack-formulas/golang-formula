@@ -6,7 +6,7 @@
 ##portable shell syntax
 
 [ -n "${GOROOT}" ] && export GOROOT=${GOROOT}
-[ -n "{{ golang.linux.base_dir }}" ] && export GOROOT={{ golang.linux.base_dir }}
+[ -n "{{ golang.path }}" ] && export GOROOT={{ golang.path }}
 
 [ -n "${GOPATH}" ] && export GOPATH=${GOPATH}
 [ -n "{{ golang.go_path }}" ] && export GOPATH={{ golang.go_path }}
