@@ -14,11 +14,15 @@ Debian: {}
 
 RedHat: {}
 
-Suse: {}
+Suse:
+  pkg:
+    name: go
 
 Gentoo: {}
 
-Arch: {}
+Arch:
+  pkg:
+    name: go
 
 Alpine: {}
 
