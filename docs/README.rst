@@ -14,8 +14,7 @@ golang-formula
    :scale: 100%
    :target: https://github.com/semantic-release/semantic-release
 
-A SaltStack formula that is empty. It has dummy content to help with a quick
-start on a new formula and it serves as a style guide.
+Deploy and manage golang using Salt.
 
 .. contents:: **Table of Contents**
 
