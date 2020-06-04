@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/saltstack-formulas/golang-formula/compare/v0.7.0...v0.7.1) (2020-06-04)
+
+
+### Documentation
+
+* **readme:** fix leader sentence ([aa41de2](https://github.com/saltstack-formulas/golang-formula/commit/aa41de2cea0acfcb31feffefe122914ffd026b2a))
+
 # [0.7.0](https://github.com/saltstack-formulas/golang-formula/compare/v0.6.5...v0.7.0) (2020-06-03)
 
 
