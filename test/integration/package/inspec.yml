@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
-name: default
+name: package
 title: golang formula
 maintainer: SaltStack Formulas
 license: Apache-2.0
 # yamllint disable-line rule:line-length
-summary: Verify that the golang formula is setup and configured correctly (installation from archive)
+summary: Verify that the golang formula is setup and configured correctly (installation from package)
 supports:
   - platform-name: debian
   - platform-name: ubuntu

@@ -164,3 +164,19 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
+  - name: package
+    provisioner:
+      state_top:
+        base:
+          '*':
+            - golang
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - golang
+      pillars_from_files:
+        golang.sls: test/salt/pillar/package.sls
+    verifier:
+      inspec_tests:
+        - path: test/integration/package
