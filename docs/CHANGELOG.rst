@@ -2,6 +2,23 @@
 Changelog
 =========
 
+`0.7.2 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.1...v0.7.2>`_ (2020-06-05)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **defaults:** ensure ``path`` is set (for package-based installation) (\ `e7e088b <https://github.com/saltstack-formulas/golang-formula/commit/e7e088bcaf38bc01ccbcd040cc87d1101aae013b>`_\ )
+* **pkg:** use correct package name per ``osfamily`` (\ `2677e84 <https://github.com/saltstack-formulas/golang-formula/commit/2677e840d1ca41c410b2ac1e8870357f779e1814>`_\ )
+* **repo:** fix relative includes cannot be used for ``sls`` requisites (\ `6049382 <https://github.com/saltstack-formulas/golang-formula/commit/6049382287898564e85d073a1d41ae4daff401b1>`_\ ), closes `#41 <https://github.com/saltstack-formulas/golang-formula/issues/41>`_
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen+travis+inspec:** add ``package`` suite (\ `aba6e4c <https://github.com/saltstack-formulas/golang-formula/commit/aba6e4cd7936ed8180e1d6b6dd7afea7d684b1b3>`_\ )
+
 `0.7.1 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.0...v0.7.1>`_ (2020-06-04)
 --------------------------------------------------------------------------------------------------------
 
