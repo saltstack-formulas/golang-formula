@@ -31,16 +31,15 @@ golang-config-file-managed-environ_file:
 
     {% for i in ('go', 'gofmt') %}
 
-       # create symlink under certain conditions
-       # archlinux, freebsd, macos for now
+       # create symlink: arch, freebsd, macos
 golang-config-file-symlink-{{ i }}-golang-binary:
   file.symlink:
     - name: /usr/local/bin/{{ i }}
-    - target: {{ golang.path }}/ {{ i }}
+    - target: {{ golang.path }}/bin/{{ i }}
     - mode: '0755'
     - force: True
     - onlyif:
       - {{ grains.os_family in ('Arch', 'FreeBSD', 'MacOS') }}
-      - test -x {{ golang.path }}/ {{ i }}
+      - test -x {{ golang.path }}/bin/{{ i }}
 
     {%- endfor %}
