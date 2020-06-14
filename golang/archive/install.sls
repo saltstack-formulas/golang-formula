@@ -29,13 +29,16 @@ golang-package-archive-install-archive-extracted:
     - user: {{ golang.rootuser }}
     - group: {{ golang.rootgroup }}
 
-    {%- if golang.linux.altpriority|int == 0 or grains.os_family in ('Arch', 'MacOS',)  %}
+    {%- if golang.linux.altpriority|int == 0 or grains.os_family in ('Arch', 'FreeBSD', 'MacOS') %}
+        {% for i in ('go', 'gofmt') %}
 
-golang-archive-install-file-symlink-golang:
+golang-package-archive-install-symlink-{{ i }}:
   file.symlink:
-    - name: /usr/local/bin/go
-    - target: {{ golang.path }}/{{ golang.command }}
+    - name: /usr/local/bin/{{ i }}
+    - target: {{ golang.path }}/go/bin/{{ i }}
+    - mode: '0755'
     - force: True
-    - onlyif: test -f {{ golang.path }}/{{ golang.command }}
+    - onlyif: test -x {{ golang.path }}/go/bin/{{ i }}
 
+        {%- endfor %}
     {%- endif %}
