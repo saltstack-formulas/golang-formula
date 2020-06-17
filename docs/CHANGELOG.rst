@@ -2,6 +2,33 @@
 Changelog
 =========
 
+`0.7.3 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.2...v0.7.3>`_ (2020-06-17)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **symlink:** remove space (\ `3db8a99 <https://github.com/saltstack-formulas/golang-formula/commit/3db8a9908141c635ffb254a7b8541a4b40d1f28c>`_\ )
+
+Code Refactoring
+^^^^^^^^^^^^^^^^
+
+
+* **symlink:** remove duplicated symlinking code (\ `c0e4a55 <https://github.com/saltstack-formulas/golang-formula/commit/c0e4a558967e3617411c2a7055c8f8b484ab2d49>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen:** use ``saltimages`` Docker Hub where available [skip ci] (\ `bf44069 <https://github.com/saltstack-formulas/golang-formula/commit/bf44069956b3f9c611b207dc7831fa5a39bab89e>`_\ )
+
+Documentation
+^^^^^^^^^^^^^
+
+
+* **readme:** set depth one (\ `6d6d0d1 <https://github.com/saltstack-formulas/golang-formula/commit/6d6d0d17865ac8d69f91d60c2e8a8725ac93b04c>`_\ )
+
 `0.7.2 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.1...v0.7.2>`_ (2020-06-05)
 --------------------------------------------------------------------------------------------------------
 
