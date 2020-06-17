@@ -17,6 +17,7 @@ golang-formula
 Deploy and manage golang using Salt.
 
 .. contents:: **Table of Contents**
+   :depth: 1
 
 General notes
 -------------

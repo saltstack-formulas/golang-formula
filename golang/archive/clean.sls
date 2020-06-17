@@ -10,6 +10,8 @@ golang-cli-package-archive-clean-file-absent:
     - names:
       - {{ golang.pkg.archive.name }}
       - /usr/local/go
+      - /usr/local/bin/go
+      - /usr/local/bin/gofmt
         {%- if golang.kernel == 'linux' %}
       - {{ golang.path }}
         {%- endif %}
