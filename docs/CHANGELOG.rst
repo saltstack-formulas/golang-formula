@@ -2,6 +2,24 @@
 Changelog
 =========
 
+`0.7.4 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.3...v0.7.4>`_ (2020-12-16)
+--------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gitlab-ci:** use GitLab CI as Travis CI replacement (\ `231b3d7 <https://github.com/saltstack-formulas/golang-formula/commit/231b3d78d54add40d75b33030af7221cfe7da159>`_\ )
+* **pre-commit:** add to formula [skip ci] (\ `9ed7689 <https://github.com/saltstack-formulas/golang-formula/commit/9ed768930e8b13ae69f64ca608845a8593caf214>`_\ )
+* **pre-commit:** enable/disable ``rstcheck`` as relevant [skip ci] (\ `412249d <https://github.com/saltstack-formulas/golang-formula/commit/412249d76d1ae448b40943322342a1207acb0f8f>`_\ )
+* **pre-commit:** finalise ``rstcheck`` configuration [skip ci] (\ `e7fc872 <https://github.com/saltstack-formulas/golang-formula/commit/e7fc87265fc109db23a5d2ab7b9bd8520259718d>`_\ )
+
+Styles
+^^^^^^
+
+
+* **libtofs.jinja:** use Black-inspired Jinja formatting [skip ci] (\ `9572212 <https://github.com/saltstack-formulas/golang-formula/commit/95722127eb64a5f0192f89a80c1f15bed76743ac>`_\ )
+
 `0.7.3 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.2...v0.7.3>`_ (2020-06-17)
 --------------------------------------------------------------------------------------------------------
 
