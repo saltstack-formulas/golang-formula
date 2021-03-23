@@ -312,6 +312,7 @@ suites:
       state_top:
         base:
           '*':
+            - golang._mapdata
             - golang
       pillars:
         top.sls:
@@ -328,6 +329,7 @@ suites:
       state_top:
         base:
           '*':
+            - golang._mapdata
             - golang
       pillars:
         top.sls:

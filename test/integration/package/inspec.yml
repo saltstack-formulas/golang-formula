@@ -7,6 +7,9 @@ maintainer: SaltStack Formulas
 license: Apache-2.0
 # yamllint disable-line rule:line-length
 summary: Verify that the golang formula is setup and configured correctly (installation from package)
+depends:
+  - name: share
+    path: test/integration/share
 supports:
   - platform-name: debian
   - platform-name: ubuntu
@@ -15,6 +18,7 @@ supports:
   - platform-name: opensuse
   - platform-name: suse
   - platform-name: freebsd
+  - platform-name: openbsd
   - platform-name: amazon
   - platform-name: oracle
   - platform-name: arch
