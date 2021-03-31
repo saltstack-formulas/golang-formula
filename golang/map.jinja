@@ -52,6 +52,8 @@
                         'rootgroup': macos_group,
                         'go_path': '/Users/%s/go'|format(golang.rootuser)
                       }) %}
+{%- elif grains.os == 'Windows' and 'cpuarch' in grains %}
+    {%- do golang.update({'arch': grains.cpuarch|lower}) %}
 {%- endif %}
 
 {%- if golang.pkg.use_upstream_archive %}
