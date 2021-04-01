@@ -29,12 +29,14 @@ Alpine: {}
 FreeBSD:
   rootgroup: wheel
   pkg:
+    name: go
     archive:
       source: https://storage.googleapis.com/golang/go1.14.2.freebsd-386.tar.gz
 
 OpenBSD:
   rootgroup: wheel
   pkg:
+    name: go
     repo:
       name: ports
       comments:
