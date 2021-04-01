@@ -11,21 +11,24 @@ golang-package-archive-install-file-directory:
     - names:
       - {{ golang.pkg.archive.name }}
       - {{ golang.go_path }}
+    - require_in:
+      - archive: golang-package-archive-install-archive-extracted
+    - makedirs: True
+  {%- if grains.os != 'Windows' %}
     - user: {{ golang.rootuser }}
     - group: {{ golang.rootgroup }}
     - mode: 755
-    - makedirs: True
-    - require_in:
-      - archive: golang-package-archive-install-archive-extracted
     - recurse:
         - user
         - group
         - mode
+  {%- endif %}
 
 golang-package-archive-install-archive-extracted:
   archive.extracted:
     {{- format_kwargs(golang.pkg.archive) }}
     - retry: {{ golang.retry_option }}
+  {%- if grains.os != 'Windows' %}
     - user: {{ golang.rootuser }}
     - group: {{ golang.rootgroup }}
 
@@ -42,3 +45,4 @@ golang-package-archive-install-symlink-{{ i }}:
 
         {%- endfor %}
     {%- endif %}
+  {%- endif %}
