@@ -52,15 +52,23 @@
                         'rootgroup': macos_group,
                         'go_path': '/Users/%s/go'|format(golang.rootuser)
                       }) %}
+{%- elif grains.os == 'Windows' and 'cpuarch' in grains %}
+    {%- do golang.update({'arch': grains.cpuarch|lower}) %}
 {%- endif %}
 
 {%- if golang.pkg.use_upstream_archive %}
     {%- set name = 'go%s.%s-%s'|format(golang.version, golang.kernel, golang.arch) %}
-    {%- set uri = golang.pkg.archive.uri + '/' + name %}
+    {%- set archive_suffix = golang.pkg.archive_helper.archive_suffix %}
+    {%- set uri = golang.pkg.archive_helper.uri + '/' + name %}
+    {%- if golang.pkg.archive.source_hash %}
+        {%- set source_hash = golang.pkg.archive.source_hash %}
+    {%- else %}
+        {%- set source_hash = uri + '.' + archive_suffix + '.sha256' %}
+    {%- endif %}
     {%- do golang.pkg.archive.update({
            'name':           golang.pkg.archive.name + '/' + name,
-           'source':         uri + '.' + golang.pkg.archive.archive_suffix,
-           'source_hash':    uri + '.' + golang.pkg.archive.archive_suffix + '.sha256',
+           'source':         uri + '.' + archive_suffix,
+           'source_hash':    source_hash,
            'archive_format': golang.pkg.archive.archive_format
     }) %}
     {%- do golang.update({'path': golang.pkg.archive.name}) %}

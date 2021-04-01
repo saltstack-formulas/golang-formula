@@ -29,12 +29,14 @@ Alpine: {}
 FreeBSD:
   rootgroup: wheel
   pkg:
+    name: go
     archive:
       source: https://storage.googleapis.com/golang/go1.14.2.freebsd-386.tar.gz
 
 OpenBSD:
   rootgroup: wheel
   pkg:
+    name: go
     repo:
       name: ports
       comments:
@@ -43,10 +45,16 @@ OpenBSD:
 Solaris: {}
 
 Windows:
+  go_path: C:\\golang\\packages
   pkg:
+    archive_helper:
+      archive_suffix: zip
+      uri: https://golang.org/dl
     archive:
-      name: 'C:\\Program Files\\'
-      source: https://storage.googleapis.com/golang/go1.14.2.linux-amd64.tar.gz
+      name: C:\\golang\\
+      source: https://golang.org/dl/go1.14.2.windows-amd64.zip
+      source_hash: 1b5a60b3bbaa81106d5ee03499b5734ec093c6a255abf9a6a067f0f497a57916
+      archive_format: zip
 
 MacOS:
   pkg:

@@ -8,10 +8,6 @@ golang:
     winner: lookup
     added_in_lookup: lookup_value
 
-  pkg:
-    archive:
-      uri: https://storage.googleapis.com/golang
-
   linux:
     # 'Alternatives system' priority: zero disables (default)
     base_dir: ''

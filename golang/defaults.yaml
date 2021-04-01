@@ -12,13 +12,14 @@ golang:
     name: golang
     use_upstream_repo: false
     use_upstream_archive: true
+    archive_helper:
+      archive_suffix: tar.gz
+      uri: https://storage.googleapis.com/golang
     archive:
       name: /usr/local
-      uri: https://storage.googleapis.com/golang
       source: null
       source_hash: null
       trim_output: true
-      archive_suffix: tar.gz
       archive_format: tar
       enforce_toplevel: true
     repo: {}

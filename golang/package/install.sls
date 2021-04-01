@@ -5,7 +5,7 @@
 {%- set sls_repo_install = tplroot ~ '.package.repo.install' %}
 {%- from tplroot ~ "/map.jinja" import golang with context %}
 
-        {%- if grains.kernel|lower == 'linux' %}
+        {%- if not grains.os_family == 'MacOS' %}
 {%- if golang.pkg.use_upstream_repo %}
 include:
   - {{ sls_repo_install }}
@@ -20,7 +20,7 @@ golang-package-install-pkg-installed:
       - sls: {{ sls_repo_install }}
     {%- endif %}
 
-        {%- elif grains.os_family == 'MacOS' %}
+        {%- else %}
 
 golang-package-install-cmd-run-brew:
   cmd.run:
