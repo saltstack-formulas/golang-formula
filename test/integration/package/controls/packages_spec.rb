@@ -6,7 +6,7 @@ control 'golang package' do
   # Overide by platform
   pkg =
     case system.platform[:family]
-    when 'suse', 'arch', 'bsd'
+    when 'suse', 'arch', 'bsd', 'windows'
       'go'
     else
       'golang'
