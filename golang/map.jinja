@@ -58,15 +58,16 @@
 
 {%- if golang.pkg.use_upstream_archive %}
     {%- set name = 'go%s.%s-%s'|format(golang.version, golang.kernel, golang.arch) %}
-    {%- set uri = golang.pkg.uri + '/' + name %}
+    {%- set archive_suffix = golang.pkg.archive_helper.archive_suffix %}
+    {%- set uri = golang.pkg.archive_helper.uri + '/' + name %}
     {%- if golang.pkg.archive.source_hash %}
         {%- set source_hash = golang.pkg.archive.source_hash %}
     {%- else %}
-        {%- set source_hash = uri + '.' + golang.pkg.archive_suffix + '.sha256' %}
+        {%- set source_hash = uri + '.' + archive_suffix + '.sha256' %}
     {%- endif %}
     {%- do golang.pkg.archive.update({
            'name':           golang.pkg.archive.name + '/' + name,
-           'source':         uri + '.' + golang.pkg.archive_suffix,
+           'source':         uri + '.' + archive_suffix,
            'source_hash':    source_hash,
            'archive_format': golang.pkg.archive.archive_format
     }) %}

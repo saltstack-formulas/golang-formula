@@ -12,7 +12,9 @@ golang:
     name: golang
     use_upstream_repo: false
     use_upstream_archive: true
-    uri: https://storage.googleapis.com/golang
+    archive_helper:
+      archive_suffix: tar.gz
+      uri: https://storage.googleapis.com/golang
     archive:
       name: /usr/local
       source: null
@@ -20,7 +22,6 @@ golang:
       trim_output: true
       archive_format: tar
       enforce_toplevel: true
-    archive_suffix: tar.gz
     repo: {}
 
   # Provided in `map.jinja` via. `grains.kernel`
