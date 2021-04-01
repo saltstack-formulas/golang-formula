@@ -2,6 +2,39 @@
 Changelog
 =========
 
+`0.7.5 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.4...v0.7.5>`_ (2021-04-01)
+--------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* move non-state entries under a new ``archive_helper`` key (\ `1b7b265 <https://github.com/saltstack-formulas/golang-formula/commit/1b7b265c0b69d52a9ae51946082c16ff4b2d7da9>`_\ )
+* **bsd:** use correct package and fix ``package`` suite tests (\ `17e763f <https://github.com/saltstack-formulas/golang-formula/commit/17e763fbb258251224759c926d40b70564e25e55>`_\ )
+* **freebsd:** ensure ``git`` is installed and ``default`` tests pass (\ `f6f009b <https://github.com/saltstack-formulas/golang-formula/commit/f6f009b350518edc6e1feeac71d6cfbb92cc8d08>`_\ )
+* **windows:** get states working on windows (\ `1a22291 <https://github.com/saltstack-formulas/golang-formula/commit/1a22291cf2623816fb3cac6b77a8e4472d47978e>`_\ )
+* **windows:** no arch grain in windows 10 (\ `5d5538e <https://github.com/saltstack-formulas/golang-formula/commit/5d5538e9ad72115a59002965cfd8cf8a03c74d5a>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* enable Vagrant-based testing using GitHub Actions (\ `a2cb899 <https://github.com/saltstack-formulas/golang-formula/commit/a2cb899ad0d36b9cdc1ba610a26c485e3356ae67>`_\ )
+* **commitlint:** ensure ``upstream/master`` uses main repo URL [skip ci] (\ `bb5b061 <https://github.com/saltstack-formulas/golang-formula/commit/bb5b061b6b11a438b16fbff4b7b0274c88200787>`_\ )
+* **gemfile+lock:** use ``ssf`` customised ``kitchen-docker`` repo [skip ci] (\ `f16be5f <https://github.com/saltstack-formulas/golang-formula/commit/f16be5f7f94d666d7acb8b12fc88466c3004283e>`_\ )
+* **gitlab-ci:** add ``rubocop`` linter (with ``allow_failure``\ ) [skip ci] (\ `431085d <https://github.com/saltstack-formulas/golang-formula/commit/431085de8a37c61d7f49985bbb669e6a650ed067>`_\ )
+* **kitchen+ci:** use latest pre-salted images (after CVE) [skip ci] (\ `8bdbbec <https://github.com/saltstack-formulas/golang-formula/commit/8bdbbec25ccf35a9c02d338929177da36808fb36>`_\ )
+* **kitchen+gitlab-ci:** use latest pre-salted images [skip ci] (\ `53cf963 <https://github.com/saltstack-formulas/golang-formula/commit/53cf96374ee695afe81ca60edc77a2a9bdeb1060>`_\ )
+* **pre-commit:** update hook for ``rubocop`` [skip ci] (\ `7384c81 <https://github.com/saltstack-formulas/golang-formula/commit/7384c81ac4263bdb2c9c2f619e14194895240eee>`_\ )
+
+Tests
+^^^^^
+
+
+* **windows:** update for ``default`` suite (\ `3f76b25 <https://github.com/saltstack-formulas/golang-formula/commit/3f76b2549151f9979054d570f64103f795a4533a>`_\ )
+* **windows:** update for ``package`` suite (\ `ab8b117 <https://github.com/saltstack-formulas/golang-formula/commit/ab8b117aeb99c7512d81e0148e9cac609d712528>`_\ )
+* standardise use of ``share`` suite & ``_mapdata`` state [skip ci] (\ `43b3b93 <https://github.com/saltstack-formulas/golang-formula/commit/43b3b932a22dc2bf26e1f23642741d7c6d2931ce>`_\ )
+
 `0.7.4 <https://github.com/saltstack-formulas/golang-formula/compare/v0.7.3...v0.7.4>`_ (2020-12-16)
 --------------------------------------------------------------------------------------------------------
 
