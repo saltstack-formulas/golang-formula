@@ -14,12 +14,16 @@ jobs:
       fail-fast: false
       matrix:
         instance:
-          # - default-freebsd-122-latest-py3
-          - freebsd-122-latest-py3
-          # - default-freebsd-114-latest-py3
-          - freebsd-114-latest-py3
-          # - default-openbsd-68-latest-py3
-          - package-openbsd-68-latest-py3
+          # - default-freebsd-122-master-py3
+          # - package-freebsd-122-master-py3
+          - freebsd-122-master-py3
+          # - default-freebsd-114-master-py3
+          # - package-freebsd-114-master-py3
+          - freebsd-114-master-py3
+          # - default-freebsd-122-3002-6-py3
+          # - default-freebsd-114-3002-6-py3
+          # - default-openbsd-68-3001-1-py3
+          - package-openbsd-68-3001-1-py3
           # - default-windows-81-latest-py3
           - windows-81-latest-py3
     steps:
